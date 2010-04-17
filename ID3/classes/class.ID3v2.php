@@ -33,7 +33,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 			   'TEXT','TFLT','TIME','TIT1', 'TIT2', 'TIT3',	'TKEY',	'TLAN',
 			   'TLEN','TMED','TOAL','TOFN',	'TOLY', 'TOPE',	'TORY',	'TOWN',
 			   'TPE1','TPE2','TPE3','TPE4',	'TPOS',	'TPUB',	'TRCK', 'TRDA',
-			   'TRSN','TRSO','TSIZ','TSRC', 'TSSE',	'TYER'
+			   'TRSN','TRSO','TSIZ','TSRC', 'TSSE',	'TYER', 'TDRC',
 			
 	
 			),
@@ -48,7 +48,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 				'TEXT', 'TFLT',	'TIME', 'TIT1', 'TIT2', 'TIT3',	'TKEY',	'TLAN',
 				'TLEN',	'TMED',	'TOAL', 'TOFN',	'TOLY', 'TOPE',	'TORY',	'TOWN',
 				'TPE1',	'TPE2',	'TPE3',	'TPE4',	'TPOS',	'TPUB',	'TRCK', 'TRDA',
-				'TRSN',	'TRSO',	'TSIZ',	'TSRC', 'TSSE',	'TYER',
+				'TRSN',	'TRSO',	'TSIZ',	'TSRC', 'TSSE',	'TYER', 'TDRC',
 				
 				'APIC', 'COMM'
 		 ),
@@ -228,9 +228,9 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		$iNullPos = strpos($mime, 0x00); /* Find the \x00 to terminate the mime type */
 		$mime     = substr($mime, 0, $iNullPos);
 		
-		echo substr($header, 10 + $iNullPos+1, 4);
+		$size += 7000; /* HACK ! */
 		$type = sprintf('%x', ord ( substr($header, 10 + $iNullPos + 2, 1) ) );
-		$img  = substr($header, 10 + $iNullPos +1);
+		$img  = substr($header, 10 + $iNullPos +1 +3, $size);
 	//	$img  = trim($img);
 		return array(
 			'ID'    => $id,
@@ -238,7 +238,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 			'FLAGS' => ord( trim($flags)),
 			'MIME' =>  $mime,
 			'PICTURETYPE' => $type,
-		//	'DATA'  => $img,
+			'DATA'  => $img,
 			'TOTALSIZE' => 10 + $iNullPos +  1 +  $size
 		);
 	}	
@@ -276,7 +276,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 				}
 				
 				if ($key == 'VERSION') {
-					$this->debug( 'Exact version is ID3v2.'.ord($info[$key]) );
+//					$this->debug( 'Exact version is ID3v2.'.ord($info[$key]) );
 					$info[$key] = sprintf('2.%d', ord($info[$key]));
 				}
 				
@@ -329,7 +329,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 				if (substr($mediainfo, 0 , strlen($ident)) == $ident) {
 					if ($this->hasPrefix($mediainfo, 'T')) {
 						$frame = $this->parseTextHeader($mediainfo);
-						print_r($frame);
+						//print_r($frame);
 						
 						$this->parsedheader['TAGS'][$frame['ID']] = $frame;
 						$mediainfo = substr($mediainfo, $frame['TOTALSIZE']);						
@@ -344,7 +344,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 					}
 
 					if ($this->hasPrefix($mediainfo, 'A')) {
-						$frame = $this->hasPrefix($mediainfo);
+						$frame = $this->parseAttachmentHeader($mediainfo);
 					
 						$this->parsedheader['TAGS'][$frame['ID']] = $frame;
 						$mediainfo = substr($mediainfo, $frame['TOTALSIZE']);						
