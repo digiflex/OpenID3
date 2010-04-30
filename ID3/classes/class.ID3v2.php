@@ -78,7 +78,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		'TAG'     => array(0, 2), 
 		'VERSION' => array(3, 4),
 		'FLAGS'   => array(5, 5),
-		'SIZE'    => array(7, 10),
+		'SIZE'    => array(6, 10),
 	);
 	
 	/**
@@ -206,13 +206,28 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		
 	private function parseAttachmentHeader($header="") {
 		
-		$id    = substr($header, 0, 4);
-		$s     = substr($header, 4, 7); /* Size raw */
+		$id    = trim( substr($header, 0, 4) );
+		$s     = trim (substr($header, 4) ); /* Size raw */
 		$f     = ord(  substr($header, 8,10)  ); /* Flogs raw */
+		$e     = ord( substr($header, 10, 11) );
+		$mime  = trim(substr($header, 10, 13));
 		
+		$newpos = 10+strlen($mime) + 1;
+		$type  = trim (substr($header, $newpos) );
+		$desc  = trim(substr($header, $newpos + strlen($type)));
+		$newpos = 10+strlen($mime) +  1 + strlen($type);
 		
+		$img = substr($header, $newpos);
+		//$img = trim($img);
 		$size  = '';
 		$flags = '';
+		$encoding = '';
+
+		for($i = 0; $i < 2; $i++) { 
+			if (ord($e[$i]) == 0) continue;
+			$encoding .= (int)ord($e[$i]);
+		}
+		
 		
 		for($i = 0; $i < 4; $i++) { 
 			if (ord($s[$i]) == 0) continue;
@@ -223,23 +238,24 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 			if (ord($f[$i]) == 0) continue;
 			$flags .= (int)ord($f[$i]);
 		}
+		$img = $type;
 		
-		$mime     = trim( substr($header, 10) );
-		$iNullPos = strpos($mime, 0x00); /* Find the \x00 to terminate the mime type */
-		$mime     = substr($mime, 0, $iNullPos);
+//		$size = 0xd;
 		
-		$size += 7000; /* HACK ! */
-		$type = sprintf('%x', ord ( substr($header, 10 + $iNullPos + 2, 1) ) );
-		$img  = substr($header, 10 + $iNullPos +1 +3, $size);
-	//	$img  = trim($img);
+	//	$size = 0x10c1c;
+		$img = substr($img, 0, $size % 4);
+	//	$img[$size] = '\x00';
+		$img = trim($img);
+//		echo '-->'.$size;
+//		exit;
 		return array(
 			'ID'    => $id,
 			'SIZE'  => $size,
 			'FLAGS' => ord( trim($flags)),
 			'MIME' =>  $mime,
-			'PICTURETYPE' => $type,
+	//		'PICTURETYPE' => $type,
 			'DATA'  => $img,
-			'TOTALSIZE' => 10 + $iNullPos +  1 +  $size
+		//	'TOTALSIZE' => 10 + $iNullPos +  1 +  $size
 		);
 	}	
 	
@@ -281,7 +297,12 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 				}
 				
 				
-				if ($key == 'SIZE') { 
+				if ($key == 'SIZE') {
+					$a = '';
+					for($i= 0; $i < strlen($info[$key]); $i++)
+					  $a = ord($info[$key][$i]);
+					
+					$info[$key] = $a;
 					$info[$key] = sprintf('%d', ord($info[$key]));
 				}
 				//	$this->debug( 'END OF SET<hr />' );
@@ -347,13 +368,14 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 						$frame = $this->parseAttachmentHeader($mediainfo);
 					
 						$this->parsedheader['TAGS'][$frame['ID']] = $frame;
-						$mediainfo = substr($mediainfo, $frame['TOTALSIZE']);						
+				//		$mediainfo = substr($mediainfo, $frame['TOTALSIZE']);
+						break;						
 					}
 					
 				}
 			}
 			
-			if ($i == 1500) break;
+			if ($i == 500) break;
 			 $i++;
 		}
 		
