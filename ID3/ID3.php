@@ -12,6 +12,9 @@ define('ROOT', dirname(__FILE__) . '/');
 define('CLASSPATH', ROOT . 'classes/');
 define('INTERFACEPATH', ROOT . 'interfaces/');
 
+include_once(CLASSPATH . 'class.ID3v1.php');
+include_once(CLASSPATH . 'class.ID3v2.php');
+
 require_once(CLASSPATH . 'class.ID3Data.php');
 require_once(CLASSPATH . 'class.ID3.php');
 
