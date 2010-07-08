@@ -12,5 +12,6 @@ define('ROOT', dirname(__FILE__) . '/');
 define('CLASSPATH', ROOT . 'classes/');
 define('INTERFACEPATH', ROOT . 'interfaces/');
 
+require_once(CLASSPATH . 'class.ID3Data.php');
 require_once(CLASSPATH . 'class.ID3.php');
 
