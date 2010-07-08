@@ -11,10 +11,6 @@
 
 class ID3
 {
-	const ID3v1   = "TAG";
- 	const ID3v2   = "ID3";
-	const ID3v24  = "IDI";
-	const ID3vUnk = "Unknown";
 	
 	/**
 	 * The mapping to convert the actual ID3 version to a human-readable format.
@@ -22,10 +18,10 @@ class ID3
 	 * @var array
 	 */
 	private $versionDesc = array(
-		self::ID3v1       => 'ID3 version 1.0',
-		self::ID3v2       => 'ID3 version 2.0',
-		self::ID3v24      => 'ID3 version 2.4',
-		self::ID3vUnk     => 'Unknown'
+		ID3Data::ID3v1       => 'ID3 version 1.0',
+		ID3Data::ID3v2       => 'ID3 version 2.0',
+		ID3Data::ID3v24      => 'ID3 version 2.4',
+		ID3Data::ID3vUnk     => 'Unknown'
 	);
 	
 	/**
@@ -70,19 +66,14 @@ class ID3
 		$data = file_get_contents($file, FILE_BINARY);	
 			
 		// Lets identify the version and boot up that specific class
-		if (($pos = strpos($data, self::ID3v2)) !== FALSE) {
-			include_once(CLASSPATH . 'class.ID3v2.php');	
-			
-			$this->tagVersion = self::ID3v2;
-			
-			$this->instance   = new ID3v2($data);
-			//$this->instance->debug('Found ID3v2 tag');
+		if (($pos = strpos($data, ID3Data::ID3v2)) !== FALSE) {
+			$this->tagVersion = ID3Data::ID3v2;			
+			$this->instance   = new ID3v2($data, new ID3Data($this->tagVersion));
 			
 		} else
-		if (($pos = strpos($data, self::ID3v1)) !== FALSE) {
-			include_once(CLASSPATH . 'class.ID3v1.php');			
-			$this->tagVersion = self::ID3v1;
-			$this->instance   = new ID3v1($data);
+		if (($pos = strpos($data, ID3Data::ID3v1)) !== FALSE) {			
+			$this->tagVersion = ID3Data::ID3v1;
+			$this->instance   = new ID3v1($data, new ID3Data($this->tagVersion));
 			
 			$this->instance->debug('Found ID3v1 tag');
 		}

@@ -19,5 +19,14 @@ class ID3Data implements ID3DataSet {
 	const ID3v24  = "IDI";
 	const ID3vUnk = "Unknown";
 	
+	
+	
+	function __construct() {
+	
+	}
+	
+	public function getParameters() {
+		
+	} 
 }
 ?>
