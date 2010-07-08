@@ -1,5 +1,4 @@
 <?php
-echo 'strlen '.strlen('Description11ddkslskdlsdklsd');
 /**
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  * @copyright (c) Digiflex Development Team 2010
@@ -19,6 +18,42 @@ if(!interface_exists('ID3ParserInterface')) {
 
 class ID3v2 extends ID3_Base implements ID3ParserInterface
 {
+	const ID3v2   = "ID3";
+	
+	private $tags = array(
+		self::ID3v2 => array(
+			'2.3' => array(
+				/**
+				 * These are the frame identifiers for the 2.3 specification
+				 * of the ID3 documentation.
+				 * @author Johnny Mast
+				 * @link http://www.id3.org/id3v2.3.0
+				 */
+			   'TALB','TBPM','TCOM','TCON', 'TCOP', 'TDAT',	'TDLY',	'TENC',
+			   'TEXT','TFLT','TIME','TIT1', 'TIT2', 'TIT3',	'TKEY',	'TLAN',
+			   'TLEN','TMED','TOAL','TOFN',	'TOLY', 'TOPE',	'TORY',	'TOWN',
+			   'TPE1','TPE2','TPE3','TPE4',	'TPOS',	'TPUB',	'TRCK', 'TRDA',
+			   'TRSN','TRSO','TSIZ','TSRC', 'TSSE',	'TYER', 'TDRC',
+			
+	
+			),
+		   '2.4' => array(
+				/**
+				 * These are the frame identifiers for the 2.4 specification
+				 * of the ID3 documentation.
+				 * @author Johnny Mast
+				 * @link http://www.id3.org/id3v2.4.0-structure
+				 */
+		    	'TALB', 'TBPM', 'TCOM', 'TCON', 'TCOP', 'TDAT',	'TDLY',	'TENC',
+				'TEXT', 'TFLT',	'TIME', 'TIT1', 'TIT2', 'TIT3',	'TKEY',	'TLAN',
+				'TLEN',	'TMED',	'TOAL', 'TOFN',	'TOLY', 'TOPE',	'TORY',	'TOWN',
+				'TPE1',	'TPE2',	'TPE3',	'TPE4',	'TPOS',	'TPUB',	'TRCK', 'TRDA',
+				'TRSN',	'TRSO',	'TSIZ',	'TSRC', 'TSSE',	'TYER', 'TDRC',
+				
+				'APIC', 'COMM'
+		 ),
+		),	
+	);
    /**
 	* This content of the file to be parsed. 
 	* @var array
@@ -162,13 +197,6 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		//	$short  = trim ( substr($header, 14, $length) ) ;
 		$long   = trim ( substr($header, 14,  $length ) );
 		
-		$this->debug('ID: '.$id);
-		$this->debug('Length: '.$length);
-		$this->debug('Flags: '.ord( trim($flags)));
-		$this->debug('Encoding: '.ord( trim($enc)));
-		$this->debug('Language: '.$lang);
-		$this->debug('Long Desc: '.$long);
-		
 	//	$this->debug('Lang: '.trim($lang));
 	//	$this->debug('Short: '.$short);
 	//	$this->debug('Description: '.$desc);
@@ -184,7 +212,42 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 	}
 		
 	private function parseAttachmentHeader($header="") {
-		echo 'Attachment found';
+		
+		$id    = substr($header, 0, 4);
+		$s     = substr($header, 4, 7); /* Size raw */
+		$f     = ord(  substr($header, 8,10)  ); /* Flogs raw */
+		
+		
+		$size  = '';
+		$flags = '';
+		
+		for($i = 0; $i < 4; $i++) { 
+			if (ord($s[$i]) == 0) continue;
+			$size .= (int)ord($s[$i]);
+		}
+
+		for($i = 0; $i < 4; $i++) { 
+			if (ord($f[$i]) == 0) continue;
+			$flags .= (int)ord($f[$i]);
+		}
+		
+		$mime     = trim( substr($header, 10) );
+		$iNullPos = strpos($mime, 0x00); /* Find the \x00 to terminate the mime type */
+		$mime     = substr($mime, 0, $iNullPos);
+		
+		$size += 7000; /* HACK ! */
+		$type = sprintf('%x', ord ( substr($header, 10 + $iNullPos + 2, 1) ) );
+		$img  = substr($header, 10 + $iNullPos +1 +3, $size);
+	//	$img  = trim($img);
+		return array(
+			'ID'    => $id,
+			'SIZE'  => $size,
+			'FLAGS' => ord( trim($flags)),
+			'MIME' =>  $mime,
+			'PICTURETYPE' => $type,
+			'DATA'  => $img,
+			'TOTALSIZE' => 10 + $iNullPos +  1 +  $size
+		);
 	}	
 	
 	private function hasPrefix($text, $char)
@@ -200,7 +263,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		if ($this->headerpos !== FALSE) {
 			$header = substr($this->getFileData(), $this->headerpos, 10);
 			$info   = array();
-			echo sprintf('header => %s (size = %d)', $header,mb_strlen($header));
+			//echo sprintf('header => %s (size = %d)', $header,mb_strlen($header));
 			
 			foreach(array_keys($this->fileinfo) as $key) {
 				$info[$key] = '';
@@ -219,16 +282,22 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 					$bitpos ++;
 				}
 				
-				if ($key == 'VERSION')
-					$this->debug( 'Exact version is ID3v2.'.ord($info[$key]) );
-
+				if ($key == 'VERSION') {
+//					$this->debug( 'Exact version is ID3v2.'.ord($info[$key]) );
+					$info[$key] = sprintf('2.%d', ord($info[$key]));
+				}
+				
+				
+				if ($key == 'SIZE') { 
+					$info[$key] = sprintf('%d', ord($info[$key]));
+				}
 				//	$this->debug( 'END OF SET<hr />' );
 					
 			    
 			}
 			/*
 			** Extract the media information from the mp3 file
-			*/
+		
 			$mediainfo = substr($this->getFileData(), 10);
 			$i = 0;
 			while($mediainfo) {
@@ -243,21 +312,59 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 				if ($this->hasPrefix($mediainfo,'C')) {
 					$tag = $this->parseComments($mediainfo);
 					$this->parsedheader['TAGS'][$tag['ID']] = $tag;
-					break;
+					$mediainfo = substr($mediainfo, $tag['TOTALSIZE']);
 				}
-			/*
+			
 			   elseif ($this->hasPrefix($mediainfo, 'A'))
 			    {
 					$tag = $this->parseAttachmentHeader($mediainfo);
-					print_r($tag);
-				//	$this->parsedheader['TAGS'][$tag['ID']] = $tag;
-				//	$mediainfo = substr($mediainfo, $tag['TOTALSIZE']);
-				//  	break;
+					$this->parsedheader['TAGS'][$tag['ID']] = $tag;
+					$mediainfo = substr($mediainfo, $tag['TOTALSIZE']);
+				  	break;
 			    } 
-			*/
+			
 				if ($i == 1500) break;
 					$i++;
 			}
+				*/
+			$identifiers = $this->tags[self::ID3v2][$info['VERSION']];
+			$mediainfo   = substr($this->getFileData(), 10);
+			
+			$i = 0;
+			while($mediainfo) { /* TODO: Should be fixed without while */
+			foreach($identifiers as $ident) {
+				if (substr($mediainfo, 0 , strlen($ident)) == $ident) {
+					if ($this->hasPrefix($mediainfo, 'T')) {
+						$frame = $this->parseTextHeader($mediainfo);
+						//print_r($frame);
+						
+						$this->parsedheader['TAGS'][$frame['ID']] = $frame;
+						$mediainfo = substr($mediainfo, $frame['TOTALSIZE']);						
+					}
+					
+					
+					if ($this->hasPrefix($mediainfo, 'C')) {
+						$frame = $this->parseComments($mediainfo);
+
+						$this->parsedheader['TAGS'][$frame['ID']] = $frame;
+						$mediainfo = substr($mediainfo, $frame['TOTALSIZE']);						
+					}
+
+					if ($this->hasPrefix($mediainfo, 'A')) {
+						$frame = $this->parseAttachmentHeader($mediainfo);
+					
+						$this->parsedheader['TAGS'][$frame['ID']] = $frame;
+						$mediainfo = substr($mediainfo, $frame['TOTALSIZE']);						
+					}
+					
+				}
+			}
+			
+			if ($i == 1500) break;
+			 $i++;
+		}
+		
+			
 			$this->parsedheader['HEADER'] = $info;
 		
 		}
