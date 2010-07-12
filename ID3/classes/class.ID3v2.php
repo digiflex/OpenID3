@@ -132,6 +132,18 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		throw new Exception('TODO');
 	}
 	
+	private function parseComment($content="") {
+		$encoding = ord($content[0]);
+		$language = substr($content, 1, 3);
+		$description = substr($content, 4);
+		 
+		return array(
+			'encoding' => $encoding,
+			'language' => $language,
+			'description'=> $description
+		);
+	}
+	
 	/**
 	 * This is the parse function for ID3v1. The header information is in the last 128 bytes
 	 */
@@ -196,8 +208,6 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 			while(strlen($mediainfo) > 0) { 
 				$identifiers = array_values($identifiers);
 				
-			//	$mediainfo = str_replace("\x00\x00", "/", $mediainfo);
-				
 				/* 
 				** Tag frame
 				** Frame ID       $xx xx xx xx (four characters) 
@@ -220,8 +230,10 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 				$StepSize = 10 + (int)$Size;
 				$Value    = substr($mediainfo, 10, (int)$Size);
 				
-				if (in_array($frameID, $identifiers)) {
+				if ($frameID == 'COMM') $Value = $this->parseComment( substr($mediainfo, 10));
 				
+				if (in_array($frameID, $identifiers)) {
+					
 					$this->parsedheader['TAGS'][$frameID] = array(
 						'TAG'   => $frameID,
 						'SIZE'  => $Size,
