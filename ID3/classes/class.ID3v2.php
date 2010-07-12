@@ -18,42 +18,13 @@ if(!interface_exists('ID3ParserInterface')) {
 
 class ID3v2 extends ID3_Base implements ID3ParserInterface
 {
-	const ID3v2   = "ID3";
 	
-	private $tags = array(
-		self::ID3v2 => array(
-			'2.3' => array(
-				/**
-				 * These are the frame identifiers for the 2.3 specification
-				 * of the ID3 documentation.
-				 * @author Johnny Mast
-				 * @link http://www.id3.org/id3v2.3.0
-				 */
-			   'TALB','TBPM','TCOM','TCON', 'TCOP', 'TDAT',	'TDLY',	'TENC',
-			   'TEXT','TFLT','TIME','TIT1', 'TIT2', 'TIT3',	'TKEY',	'TLAN',
-			   'TLEN','TMED','TOAL','TOFN',	'TOLY', 'TOPE',	'TORY',	'TOWN',
-			   'TPE1','TPE2','TPE3','TPE4',	'TPOS',	'TPUB',	'TRCK', 'TRDA',
-			   'TRSN','TRSO','TSIZ','TSRC', 'TSSE',	'TYER', 'TDRC',
-			
+   /**
+	* This contains the tags retrieved from the parser dataset. 
+	* @var array
+	*/	
+	private $tags = null;
 	
-			),
-		   '2.4' => array(
-				/**
-				 * These are the frame identifiers for the 2.4 specification
-				 * of the ID3 documentation.
-				 * @author Johnny Mast
-				 * @link http://www.id3.org/id3v2.4.0-structure
-				 */
-		    	'TALB', 'TBPM', 'TCOM', 'TCON', 'TCOP', 'TDAT',	'TDLY',	'TENC',
-				'TEXT', 'TFLT',	'TIME', 'TIT1', 'TIT2', 'TIT3',	'TKEY',	'TLAN',
-				'TLEN',	'TMED',	'TOAL', 'TOFN',	'TOLY', 'TOPE',	'TORY',	'TOWN',
-				'TPE1',	'TPE2',	'TPE3',	'TPE4',	'TPOS',	'TPUB',	'TRCK', 'TRDA',
-				'TRSN',	'TRSO',	'TSIZ',	'TSRC', 'TSSE',	'TYER', 'TDRC',
-				
-				'APIC', 'COMM'
-		 ),
-		),	
-	);
    /**
 	* This content of the file to be parsed. 
 	* @var array
@@ -93,6 +64,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		try
 		{	
 			$this->dataSet = $dataSet;
+			$this->tags = $this->dataSet->getTags();
 			
 			$this->parsedheader['HEADER'] = array();
 			$this->parsedheader['TAGS']	= array();	
@@ -106,6 +78,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 			} else {
 				throw new Exception('Unable to parse file, No ID3v1 tag found');
 			}
+			
 			$this->parse();
 			
 		} catch (Exception $e)  {
@@ -124,9 +97,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 			$this->parsedheader[$key] = $value;
 		}
 	}
-	
-
-	
+		
 	/**
     * Return the parsed information.
     *
@@ -197,9 +168,6 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		//	$short  = trim ( substr($header, 14, $length) ) ;
 		$long   = trim ( substr($header, 14,  $length ) );
 		
-	//	$this->debug('Lang: '.trim($lang));
-	//	$this->debug('Short: '.$short);
-	//	$this->debug('Description: '.$desc);
 		return array(
 			'ID'    => $id,
 			'SIZE'  => $length,
@@ -238,7 +206,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		$size += 7000; /* HACK ! */
 		$type = sprintf('%x', ord ( substr($header, 10 + $iNullPos + 2, 1) ) );
 		$img  = substr($header, 10 + $iNullPos +1 +3, $size);
-	//	$img  = trim($img);
+
 		return array(
 			'ID'    => $id,
 			'SIZE'  => $size,
@@ -263,8 +231,7 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		if ($this->headerpos !== FALSE) {
 			$header = substr($this->getFileData(), $this->headerpos, 10);
 			$info   = array();
-			//echo sprintf('header => %s (size = %d)', $header,mb_strlen($header));
-			
+				
 			foreach(array_keys($this->fileinfo) as $key) {
 				$info[$key] = '';
 			}
@@ -278,12 +245,10 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 				for($i = 0; $i < $length; $i++) {
 					$bit = @$info[$key][$i];
 					$bit = ord($bit);
-				//	$this->debug( sprintf('>%x< (%c) bitpos %d', $bit, $bit, $bitpos) );
 					$bitpos ++;
 				}
 				
 				if ($key == 'VERSION') {
-//					$this->debug( 'Exact version is ID3v2.'.ord($info[$key]) );
 					$info[$key] = sprintf('2.%d', ord($info[$key]));
 				}
 				
@@ -291,42 +256,9 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 				if ($key == 'SIZE') { 
 					$info[$key] = sprintf('%d', ord($info[$key]));
 				}
-				//	$this->debug( 'END OF SET<hr />' );
-					
-			    
 			}
-			/*
-			** Extract the media information from the mp3 file
 		
-			$mediainfo = substr($this->getFileData(), 10);
-			$i = 0;
-			while($mediainfo) {
-				
-				if ($this->hasPrefix($mediainfo, 'T')) {
-					$tag = $this->parseTextHeader($mediainfo);
-					$this->parsedheader['TAGS'][$tag['ID']] = $tag;
-					$mediainfo = substr($mediainfo, $tag['TOTALSIZE']);
-					
-			    }
-			
-				if ($this->hasPrefix($mediainfo,'C')) {
-					$tag = $this->parseComments($mediainfo);
-					$this->parsedheader['TAGS'][$tag['ID']] = $tag;
-					$mediainfo = substr($mediainfo, $tag['TOTALSIZE']);
-				}
-			
-			   elseif ($this->hasPrefix($mediainfo, 'A'))
-			    {
-					$tag = $this->parseAttachmentHeader($mediainfo);
-					$this->parsedheader['TAGS'][$tag['ID']] = $tag;
-					$mediainfo = substr($mediainfo, $tag['TOTALSIZE']);
-				  	break;
-			    } 
-			
-				if ($i == 1500) break;
-					$i++;
-			}
-				*/
+		
 			$identifiers = $this->tags[self::ID3v2][$info['VERSION']];
 			$mediainfo   = substr($this->getFileData(), 10);
 			
