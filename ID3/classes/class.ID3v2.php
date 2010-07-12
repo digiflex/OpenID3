@@ -81,18 +81,25 @@ class ID3v2 extends ID3_Base implements ID3ParserInterface
 		'SIZE'    => array(6, 10),
 	);
 	
+	
+	private $dataSet = null;
+	
 	/**
 	 * Constructor
 	 * @param string $data Contains the data to parse.
 	 */
-	public function __construct($data)
+	public function __construct($data, $dataSet)
 	{
 		try
 		{	
+			$this->dataSet = $dataSet;
+			
 			$this->parsedheader['HEADER'] = array();
 			$this->parsedheader['TAGS']	= array();	
+			
 			// Set the data in the parent
 			$this->setFileData($data);
+			
 			// If we have found a ID3v1 match
 			if (($pos = strpos($data, parent::ID3v2)) !== FALSE) {
 				$this->headerpos = $pos;

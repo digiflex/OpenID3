@@ -43,7 +43,7 @@ class ID3v1 extends ID3_Base implements ID3ParserInterface
 	 * Constructor
 	 * @param string $data Contains the data to parse.
 	 */
-	public function __construct($data)
+	public function __construct($data, $dataSet)
 	{
 		try
 		{			
