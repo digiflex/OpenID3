@@ -1,4 +1,5 @@
 <?php
+//
 /**
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  * @copyright (c) Digiflex Development Team 2010
