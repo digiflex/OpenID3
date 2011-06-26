@@ -1,0 +1,4643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+			<testcases>
+				<test id="1">
+			<id>1</id>
+			<title><![CDATA[Test case 1]]></title>
+			<file><![CDATA[id3v1_001_basic.mp3]]></file>
+			<desc><![CDATA[An ordinary ID3v1 tag with all fields set to a plauseble value.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Title]]></title>
+							<artist><![CDATA[Artist]]></artist>
+							<album><![CDATA[Album]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[Comment]]></comment>
+							<genre><![CDATA[7 (Hip-Hop)]]></genre>
+					</test>
+		
+		
+				<test id="2">
+			<id>2</id>
+			<title><![CDATA[Test case 2]]></title>
+			<file><![CDATA[id3v1_002_basic.mp3]]></file>
+			<desc><![CDATA[An ordinary ID3v1.1 tag with all fields set to a plauseble value.]]></desc>
+							<version><![CDATA[1.1]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Title]]></title>
+							<artist><![CDATA[Artist]]></artist>
+							<album><![CDATA[Album]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[Comment]]></comment>
+							<track><![CDATA[12]]></track>
+							<genre><![CDATA[7 (Hip-Hop)]]></genre>
+					</test>
+		
+		
+				<test id="3">
+			<id>3</id>
+			<title><![CDATA[Test case 3]]></title>
+			<file><![CDATA[id3v1_003_basic_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with its header in the wrong case.                         
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[tag]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="4">
+			<id>4</id>
+			<title><![CDATA[Test case 4]]></title>
+			<file><![CDATA[id3v1_004_basic.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with all fields set to shortest legal value.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="5">
+			<id>5</id>
+			<title><![CDATA[Test case 5]]></title>
+			<file><![CDATA[id3v1_005_basic.mp3]]></file>
+			<desc><![CDATA[An ID3v1 tag with all fields set to longest value.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaA]]></title>
+							<artist><![CDATA[bbbbbbbbbbbbbbbbbbbbbbbbbbbbbB]]></artist>
+							<album><![CDATA[cccccccccccccccccccccccccccccC]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[dddddddddddddddddddddddddddddD]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="6">
+			<id>6</id>
+			<title><![CDATA[Test case 6]]></title>
+			<file><![CDATA[id3v1_006_basic.mp3]]></file>
+			<desc><![CDATA[An ID3v1.1 tag with all fields set to longest value.]]></desc>
+							<version><![CDATA[1.1]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[aaaaaaaaaaaaaaaaaaaaaaaaaaaaaA]]></title>
+							<artist><![CDATA[bbbbbbbbbbbbbbbbbbbbbbbbbbbbbB]]></artist>
+							<album><![CDATA[cccccccccccccccccccccccccccccC]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[dddddddddddddddddddddddddddD]]></comment>
+							<track><![CDATA[1]]></track>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="7">
+			<id>7</id>
+			<title><![CDATA[Test case 7]]></title>
+			<file><![CDATA[id3v1_007_basic_W.mp3]]></file>
+			<desc><![CDATA[An ID3v1 tag with junk after string terminator. The junk should not   
+show up for the user (i.e. only the string 12345 should show up).     
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[12345\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0junk]]></title>
+							<artist><![CDATA[12345\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0junk]]></artist>
+							<album><![CDATA[12345\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0junk]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[12345\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0junk]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="8">
+			<id>8</id>
+			<title><![CDATA[Test case 8]]></title>
+			<file><![CDATA[id3v1_008_basic_W.mp3]]></file>
+			<desc><![CDATA[An ID3v1 tag with junk after string terminator. The junk should not   
+show up for the user (i.e. only the string 12345 should show up).     
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.1]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[12345\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0junk]]></title>
+							<artist><![CDATA[12345\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0junk]]></artist>
+							<album><![CDATA[12345\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0junk]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[12345\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0junk]]></comment>
+							<track><![CDATA[1]]></track>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="9">
+			<id>9</id>
+			<title><![CDATA[Test case 9]]></title>
+			<file><![CDATA[id3v1_009_basic.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with the track number set to max (255).]]></desc>
+							<version><![CDATA[1.1]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<track><![CDATA[255]]></track>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="10">
+			<id>10</id>
+			<title><![CDATA[Test case 10]]></title>
+			<file><![CDATA[id3v1_010_year.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with the year set to 0000.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[0000]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="11">
+			<id>11</id>
+			<title><![CDATA[Test case 11]]></title>
+			<file><![CDATA[id3v1_011_year.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with the year set to 9999.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[9999]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="12">
+			<id>12</id>
+			<title><![CDATA[Test case 12]]></title>
+			<file><![CDATA[id3v1_012_year_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with the year set to "   3".                               
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[   3]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="13">
+			<id>13</id>
+			<title><![CDATA[Test case 13]]></title>
+			<file><![CDATA[id3v1_013_year_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with the year set to "112\0".                              
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[112]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="14">
+			<id>14</id>
+			<title><![CDATA[Test case 14]]></title>
+			<file><![CDATA[id3v1_014_year_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with the year set to NULL.                                 
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="15">
+			<id>15</id>
+			<title><![CDATA[Test case 15]]></title>
+			<file><![CDATA[id3v1_015_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Blues.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Blues]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="16">
+			<id>16</id>
+			<title><![CDATA[Test case 16]]></title>
+			<file><![CDATA[id3v1_016_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Classic Rock.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Classic Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[1 (Classic Rock)]]></genre>
+					</test>
+		
+		
+				<test id="17">
+			<id>17</id>
+			<title><![CDATA[Test case 17]]></title>
+			<file><![CDATA[id3v1_017_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Country.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Country]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[2 (Country)]]></genre>
+					</test>
+		
+		
+				<test id="18">
+			<id>18</id>
+			<title><![CDATA[Test case 18]]></title>
+			<file><![CDATA[id3v1_018_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Dance.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Dance]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[3 (Dance)]]></genre>
+					</test>
+		
+		
+				<test id="19">
+			<id>19</id>
+			<title><![CDATA[Test case 19]]></title>
+			<file><![CDATA[id3v1_019_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Disco.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Disco]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[4 (Disco)]]></genre>
+					</test>
+		
+		
+				<test id="20">
+			<id>20</id>
+			<title><![CDATA[Test case 20]]></title>
+			<file><![CDATA[id3v1_020_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Funk.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Funk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[5 (Funk)]]></genre>
+					</test>
+		
+		
+				<test id="21">
+			<id>21</id>
+			<title><![CDATA[Test case 21]]></title>
+			<file><![CDATA[id3v1_021_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Grunge.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Grunge]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[6 (Grunge)]]></genre>
+					</test>
+		
+		
+				<test id="22">
+			<id>22</id>
+			<title><![CDATA[Test case 22]]></title>
+			<file><![CDATA[id3v1_022_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Hip-Hop.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Hip-Hop]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[7 (Hip-Hop)]]></genre>
+					</test>
+		
+		
+				<test id="23">
+			<id>23</id>
+			<title><![CDATA[Test case 23]]></title>
+			<file><![CDATA[id3v1_023_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Jazz.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Jazz]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[8 (Jazz)]]></genre>
+					</test>
+		
+		
+				<test id="24">
+			<id>24</id>
+			<title><![CDATA[Test case 24]]></title>
+			<file><![CDATA[id3v1_024_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Metal.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Metal]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[9 (Metal)]]></genre>
+					</test>
+		
+		
+				<test id="25">
+			<id>25</id>
+			<title><![CDATA[Test case 25]]></title>
+			<file><![CDATA[id3v1_025_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to New Age.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[New Age]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[10 (New Age)]]></genre>
+					</test>
+		
+		
+				<test id="26">
+			<id>26</id>
+			<title><![CDATA[Test case 26]]></title>
+			<file><![CDATA[id3v1_026_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Oldies.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Oldies]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[11 (Oldies)]]></genre>
+					</test>
+		
+		
+				<test id="27">
+			<id>27</id>
+			<title><![CDATA[Test case 27]]></title>
+			<file><![CDATA[id3v1_027_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Other.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Other]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[12 (Other)]]></genre>
+					</test>
+		
+		
+				<test id="28">
+			<id>28</id>
+			<title><![CDATA[Test case 28]]></title>
+			<file><![CDATA[id3v1_028_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Pop.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Pop]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[13 (Pop)]]></genre>
+					</test>
+		
+		
+				<test id="29">
+			<id>29</id>
+			<title><![CDATA[Test case 29]]></title>
+			<file><![CDATA[id3v1_029_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to R&B.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[R&B]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[14 (R&B)]]></genre>
+					</test>
+		
+		
+				<test id="30">
+			<id>30</id>
+			<title><![CDATA[Test case 30]]></title>
+			<file><![CDATA[id3v1_030_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Rap.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Rap]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[15 (Rap)]]></genre>
+					</test>
+		
+		
+				<test id="31">
+			<id>31</id>
+			<title><![CDATA[Test case 31]]></title>
+			<file><![CDATA[id3v1_031_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Reggae.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Reggae]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[16 (Reggae)]]></genre>
+					</test>
+		
+		
+				<test id="32">
+			<id>32</id>
+			<title><![CDATA[Test case 32]]></title>
+			<file><![CDATA[id3v1_032_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Rock.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[17 (Rock)]]></genre>
+					</test>
+		
+		
+				<test id="33">
+			<id>33</id>
+			<title><![CDATA[Test case 33]]></title>
+			<file><![CDATA[id3v1_033_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Techno.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Techno]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[18 (Techno)]]></genre>
+					</test>
+		
+		
+				<test id="34">
+			<id>34</id>
+			<title><![CDATA[Test case 34]]></title>
+			<file><![CDATA[id3v1_034_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Industrial.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Industrial]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[19 (Industrial)]]></genre>
+					</test>
+		
+		
+				<test id="35">
+			<id>35</id>
+			<title><![CDATA[Test case 35]]></title>
+			<file><![CDATA[id3v1_035_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Alternative.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Alternative]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[20 (Alternative)]]></genre>
+					</test>
+		
+		
+				<test id="36">
+			<id>36</id>
+			<title><![CDATA[Test case 36]]></title>
+			<file><![CDATA[id3v1_036_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Ska.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Ska]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[21 (Ska)]]></genre>
+					</test>
+		
+		
+				<test id="37">
+			<id>37</id>
+			<title><![CDATA[Test case 37]]></title>
+			<file><![CDATA[id3v1_037_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Death Metal.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Death Metal]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[22 (Death Metal)]]></genre>
+					</test>
+		
+		
+				<test id="38">
+			<id>38</id>
+			<title><![CDATA[Test case 38]]></title>
+			<file><![CDATA[id3v1_038_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Pranks.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Pranks]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[23 (Pranks)]]></genre>
+					</test>
+		
+		
+				<test id="39">
+			<id>39</id>
+			<title><![CDATA[Test case 39]]></title>
+			<file><![CDATA[id3v1_039_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Soundtrack.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Soundtrack]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[24 (Soundtrack)]]></genre>
+					</test>
+		
+		
+				<test id="40">
+			<id>40</id>
+			<title><![CDATA[Test case 40]]></title>
+			<file><![CDATA[id3v1_040_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Euro-Techno.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Euro-Techno]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[25 (Euro-Techno)]]></genre>
+					</test>
+		
+		
+				<test id="41">
+			<id>41</id>
+			<title><![CDATA[Test case 41]]></title>
+			<file><![CDATA[id3v1_041_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Ambient.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Ambient]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[26 (Ambient)]]></genre>
+					</test>
+		
+		
+				<test id="42">
+			<id>42</id>
+			<title><![CDATA[Test case 42]]></title>
+			<file><![CDATA[id3v1_042_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Trip-Hop.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Trip-Hop]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[27 (Trip-Hop)]]></genre>
+					</test>
+		
+		
+				<test id="43">
+			<id>43</id>
+			<title><![CDATA[Test case 43]]></title>
+			<file><![CDATA[id3v1_043_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Vocal.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Vocal]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[28 (Vocal)]]></genre>
+					</test>
+		
+		
+				<test id="44">
+			<id>44</id>
+			<title><![CDATA[Test case 44]]></title>
+			<file><![CDATA[id3v1_044_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Jazz+Funk.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Jazz+Funk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[29 (Jazz+Funk)]]></genre>
+					</test>
+		
+		
+				<test id="45">
+			<id>45</id>
+			<title><![CDATA[Test case 45]]></title>
+			<file><![CDATA[id3v1_045_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Fusion.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Fusion]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[30 (Fusion)]]></genre>
+					</test>
+		
+		
+				<test id="46">
+			<id>46</id>
+			<title><![CDATA[Test case 46]]></title>
+			<file><![CDATA[id3v1_046_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Trance.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Trance]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[31 (Trance)]]></genre>
+					</test>
+		
+		
+				<test id="47">
+			<id>47</id>
+			<title><![CDATA[Test case 47]]></title>
+			<file><![CDATA[id3v1_047_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Classical.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Classical]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[32 (Classical)]]></genre>
+					</test>
+		
+		
+				<test id="48">
+			<id>48</id>
+			<title><![CDATA[Test case 48]]></title>
+			<file><![CDATA[id3v1_048_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Instrumental.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Instrumental]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[33 (Instrumental)]]></genre>
+					</test>
+		
+		
+				<test id="49">
+			<id>49</id>
+			<title><![CDATA[Test case 49]]></title>
+			<file><![CDATA[id3v1_049_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Acid.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Acid]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[34 (Acid)]]></genre>
+					</test>
+		
+		
+				<test id="50">
+			<id>50</id>
+			<title><![CDATA[Test case 50]]></title>
+			<file><![CDATA[id3v1_050_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to House.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[House]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[35 (House)]]></genre>
+					</test>
+		
+		
+				<test id="51">
+			<id>51</id>
+			<title><![CDATA[Test case 51]]></title>
+			<file><![CDATA[id3v1_051_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Game.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Game]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[36 (Game)]]></genre>
+					</test>
+		
+		
+				<test id="52">
+			<id>52</id>
+			<title><![CDATA[Test case 52]]></title>
+			<file><![CDATA[id3v1_052_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Sound Clip.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Sound Clip]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[37 (Sound Clip)]]></genre>
+					</test>
+		
+		
+				<test id="53">
+			<id>53</id>
+			<title><![CDATA[Test case 53]]></title>
+			<file><![CDATA[id3v1_053_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Gospel.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Gospel]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[38 (Gospel)]]></genre>
+					</test>
+		
+		
+				<test id="54">
+			<id>54</id>
+			<title><![CDATA[Test case 54]]></title>
+			<file><![CDATA[id3v1_054_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Noise.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Noise]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[39 (Noise)]]></genre>
+					</test>
+		
+		
+				<test id="55">
+			<id>55</id>
+			<title><![CDATA[Test case 55]]></title>
+			<file><![CDATA[id3v1_055_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to AlternRock.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[AlternRock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[40 (AlternRock)]]></genre>
+					</test>
+		
+		
+				<test id="56">
+			<id>56</id>
+			<title><![CDATA[Test case 56]]></title>
+			<file><![CDATA[id3v1_056_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Bass.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Bass]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[41 (Bass)]]></genre>
+					</test>
+		
+		
+				<test id="57">
+			<id>57</id>
+			<title><![CDATA[Test case 57]]></title>
+			<file><![CDATA[id3v1_057_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Soul.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Soul]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[42 (Soul)]]></genre>
+					</test>
+		
+		
+				<test id="58">
+			<id>58</id>
+			<title><![CDATA[Test case 58]]></title>
+			<file><![CDATA[id3v1_058_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Punk.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Punk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[43 (Punk)]]></genre>
+					</test>
+		
+		
+				<test id="59">
+			<id>59</id>
+			<title><![CDATA[Test case 59]]></title>
+			<file><![CDATA[id3v1_059_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Space.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Space]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[44 (Space)]]></genre>
+					</test>
+		
+		
+				<test id="60">
+			<id>60</id>
+			<title><![CDATA[Test case 60]]></title>
+			<file><![CDATA[id3v1_060_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Meditative.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Meditative]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[45 (Meditative)]]></genre>
+					</test>
+		
+		
+				<test id="61">
+			<id>61</id>
+			<title><![CDATA[Test case 61]]></title>
+			<file><![CDATA[id3v1_061_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Instrumental Pop.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Instrumental Pop]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[46 (Instrumental Pop)]]></genre>
+					</test>
+		
+		
+				<test id="62">
+			<id>62</id>
+			<title><![CDATA[Test case 62]]></title>
+			<file><![CDATA[id3v1_062_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Instrumental Rock.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Instrumental Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[47 (Instrumental Rock)]]></genre>
+					</test>
+		
+		
+				<test id="63">
+			<id>63</id>
+			<title><![CDATA[Test case 63]]></title>
+			<file><![CDATA[id3v1_063_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Ethnic.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Ethnic]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[48 (Ethnic)]]></genre>
+					</test>
+		
+		
+				<test id="64">
+			<id>64</id>
+			<title><![CDATA[Test case 64]]></title>
+			<file><![CDATA[id3v1_064_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Gothic.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Gothic]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[49 (Gothic)]]></genre>
+					</test>
+		
+		
+				<test id="65">
+			<id>65</id>
+			<title><![CDATA[Test case 65]]></title>
+			<file><![CDATA[id3v1_065_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Darkwave.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Darkwave]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[50 (Darkwave)]]></genre>
+					</test>
+		
+		
+				<test id="66">
+			<id>66</id>
+			<title><![CDATA[Test case 66]]></title>
+			<file><![CDATA[id3v1_066_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Techno-Industrial.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Techno-Industrial]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[51 (Techno-Industrial)]]></genre>
+					</test>
+		
+		
+				<test id="67">
+			<id>67</id>
+			<title><![CDATA[Test case 67]]></title>
+			<file><![CDATA[id3v1_067_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Electronic.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Electronic]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[52 (Electronic)]]></genre>
+					</test>
+		
+		
+				<test id="68">
+			<id>68</id>
+			<title><![CDATA[Test case 68]]></title>
+			<file><![CDATA[id3v1_068_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Pop-Folk.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Pop-Folk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[53 (Pop-Folk)]]></genre>
+					</test>
+		
+		
+				<test id="69">
+			<id>69</id>
+			<title><![CDATA[Test case 69]]></title>
+			<file><![CDATA[id3v1_069_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Eurodance.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Eurodance]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[54 (Eurodance)]]></genre>
+					</test>
+		
+		
+				<test id="70">
+			<id>70</id>
+			<title><![CDATA[Test case 70]]></title>
+			<file><![CDATA[id3v1_070_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Dream.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Dream]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[55 (Dream)]]></genre>
+					</test>
+		
+		
+				<test id="71">
+			<id>71</id>
+			<title><![CDATA[Test case 71]]></title>
+			<file><![CDATA[id3v1_071_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Southern Rock.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Southern Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[56 (Southern Rock)]]></genre>
+					</test>
+		
+		
+				<test id="72">
+			<id>72</id>
+			<title><![CDATA[Test case 72]]></title>
+			<file><![CDATA[id3v1_072_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Comedy.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Comedy]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[57 (Comedy)]]></genre>
+					</test>
+		
+		
+				<test id="73">
+			<id>73</id>
+			<title><![CDATA[Test case 73]]></title>
+			<file><![CDATA[id3v1_073_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Cult.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Cult]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[58 (Cult)]]></genre>
+					</test>
+		
+		
+				<test id="74">
+			<id>74</id>
+			<title><![CDATA[Test case 74]]></title>
+			<file><![CDATA[id3v1_074_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Gangsta.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Gangsta]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[59 (Gangsta)]]></genre>
+					</test>
+		
+		
+				<test id="75">
+			<id>75</id>
+			<title><![CDATA[Test case 75]]></title>
+			<file><![CDATA[id3v1_075_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Top 40.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Top 40]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[60 (Top 40)]]></genre>
+					</test>
+		
+		
+				<test id="76">
+			<id>76</id>
+			<title><![CDATA[Test case 76]]></title>
+			<file><![CDATA[id3v1_076_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Christian Rap.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Christian Rap]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[61 (Christian Rap)]]></genre>
+					</test>
+		
+		
+				<test id="77">
+			<id>77</id>
+			<title><![CDATA[Test case 77]]></title>
+			<file><![CDATA[id3v1_077_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Pop/Funk.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Pop/Funk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[62 (Pop/Funk)]]></genre>
+					</test>
+		
+		
+				<test id="78">
+			<id>78</id>
+			<title><![CDATA[Test case 78]]></title>
+			<file><![CDATA[id3v1_078_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Jungle.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Jungle]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[63 (Jungle)]]></genre>
+					</test>
+		
+		
+				<test id="79">
+			<id>79</id>
+			<title><![CDATA[Test case 79]]></title>
+			<file><![CDATA[id3v1_079_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Native American.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Native American]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[64 (Native American)]]></genre>
+					</test>
+		
+		
+				<test id="80">
+			<id>80</id>
+			<title><![CDATA[Test case 80]]></title>
+			<file><![CDATA[id3v1_080_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Cabaret.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Cabaret]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[65 (Cabaret)]]></genre>
+					</test>
+		
+		
+				<test id="81">
+			<id>81</id>
+			<title><![CDATA[Test case 81]]></title>
+			<file><![CDATA[id3v1_081_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to New Wave.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[New Wave]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[66 (New Wave)]]></genre>
+					</test>
+		
+		
+				<test id="82">
+			<id>82</id>
+			<title><![CDATA[Test case 82]]></title>
+			<file><![CDATA[id3v1_082_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Psychadelic.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Psychadelic]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[67 (Psychadelic)]]></genre>
+					</test>
+		
+		
+				<test id="83">
+			<id>83</id>
+			<title><![CDATA[Test case 83]]></title>
+			<file><![CDATA[id3v1_083_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Rave.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Rave]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[68 (Rave)]]></genre>
+					</test>
+		
+		
+				<test id="84">
+			<id>84</id>
+			<title><![CDATA[Test case 84]]></title>
+			<file><![CDATA[id3v1_084_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Showtunes.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Showtunes]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[69 (Showtunes)]]></genre>
+					</test>
+		
+		
+				<test id="85">
+			<id>85</id>
+			<title><![CDATA[Test case 85]]></title>
+			<file><![CDATA[id3v1_085_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Trailer.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Trailer]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[70 (Trailer)]]></genre>
+					</test>
+		
+		
+				<test id="86">
+			<id>86</id>
+			<title><![CDATA[Test case 86]]></title>
+			<file><![CDATA[id3v1_086_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Lo-Fi.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Lo-Fi]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[71 (Lo-Fi)]]></genre>
+					</test>
+		
+		
+				<test id="87">
+			<id>87</id>
+			<title><![CDATA[Test case 87]]></title>
+			<file><![CDATA[id3v1_087_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Tribal.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Tribal]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[72 (Tribal)]]></genre>
+					</test>
+		
+		
+				<test id="88">
+			<id>88</id>
+			<title><![CDATA[Test case 88]]></title>
+			<file><![CDATA[id3v1_088_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Acid Punk.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Acid Punk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[73 (Acid Punk)]]></genre>
+					</test>
+		
+		
+				<test id="89">
+			<id>89</id>
+			<title><![CDATA[Test case 89]]></title>
+			<file><![CDATA[id3v1_089_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Acid Jazz.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Acid Jazz]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[74 (Acid Jazz)]]></genre>
+					</test>
+		
+		
+				<test id="90">
+			<id>90</id>
+			<title><![CDATA[Test case 90]]></title>
+			<file><![CDATA[id3v1_090_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Polka.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Polka]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[75 (Polka)]]></genre>
+					</test>
+		
+		
+				<test id="91">
+			<id>91</id>
+			<title><![CDATA[Test case 91]]></title>
+			<file><![CDATA[id3v1_091_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Retro.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Retro]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[76 (Retro)]]></genre>
+					</test>
+		
+		
+				<test id="92">
+			<id>92</id>
+			<title><![CDATA[Test case 92]]></title>
+			<file><![CDATA[id3v1_092_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Musical.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Musical]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[77 (Musical)]]></genre>
+					</test>
+		
+		
+				<test id="93">
+			<id>93</id>
+			<title><![CDATA[Test case 93]]></title>
+			<file><![CDATA[id3v1_093_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Rock & Roll.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Rock & Roll]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[78 (Rock & Roll)]]></genre>
+					</test>
+		
+		
+				<test id="94">
+			<id>94</id>
+			<title><![CDATA[Test case 94]]></title>
+			<file><![CDATA[id3v1_094_genre.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Hard Rock.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Hard Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[79 (Hard Rock)]]></genre>
+					</test>
+		
+		
+				<test id="95">
+			<id>95</id>
+			<title><![CDATA[Test case 95]]></title>
+			<file><![CDATA[id3v1_095_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Folk. Only the first 80 genres are       
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Folk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[80 (Folk)]]></genre>
+					</test>
+		
+		
+				<test id="96">
+			<id>96</id>
+			<title><![CDATA[Test case 96]]></title>
+			<file><![CDATA[id3v1_096_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Folk-Rock. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Folk-Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[81 (Folk-Rock)]]></genre>
+					</test>
+		
+		
+				<test id="97">
+			<id>97</id>
+			<title><![CDATA[Test case 97]]></title>
+			<file><![CDATA[id3v1_097_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to National Folk. Only the first 80 genres  
+are defined in the original ID3.                                      
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[National Folk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[82 (National Folk)]]></genre>
+					</test>
+		
+		
+				<test id="98">
+			<id>98</id>
+			<title><![CDATA[Test case 98]]></title>
+			<file><![CDATA[id3v1_098_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Swing. Only the first 80 genres are      
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Swing]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[83 (Swing)]]></genre>
+					</test>
+		
+		
+				<test id="99">
+			<id>99</id>
+			<title><![CDATA[Test case 99]]></title>
+			<file><![CDATA[id3v1_099_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Fast Fusion. Only the first 80 genres are
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Fast Fusion]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[84 (Fast Fusion)]]></genre>
+					</test>
+		
+		
+				<test id="100">
+			<id>100</id>
+			<title><![CDATA[Test case 100]]></title>
+			<file><![CDATA[id3v1_100_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Bebob. Only the first 80 genres are      
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Bebob]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[85 (Bebob)]]></genre>
+					</test>
+		
+		
+				<test id="101">
+			<id>101</id>
+			<title><![CDATA[Test case 101]]></title>
+			<file><![CDATA[id3v1_101_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Latin. Only the first 80 genres are      
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Latin]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[86 (Latin)]]></genre>
+					</test>
+		
+		
+				<test id="102">
+			<id>102</id>
+			<title><![CDATA[Test case 102]]></title>
+			<file><![CDATA[id3v1_102_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Revival. Only the first 80 genres are    
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Revival]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[87 (Revival)]]></genre>
+					</test>
+		
+		
+				<test id="103">
+			<id>103</id>
+			<title><![CDATA[Test case 103]]></title>
+			<file><![CDATA[id3v1_103_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Celtic. Only the first 80 genres are     
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Celtic]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[88 (Celtic)]]></genre>
+					</test>
+		
+		
+				<test id="104">
+			<id>104</id>
+			<title><![CDATA[Test case 104]]></title>
+			<file><![CDATA[id3v1_104_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Bluegrass. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Bluegrass]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[89 (Bluegrass)]]></genre>
+					</test>
+		
+		
+				<test id="105">
+			<id>105</id>
+			<title><![CDATA[Test case 105]]></title>
+			<file><![CDATA[id3v1_105_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Avantgarde. Only the first 80 genres are 
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Avantgarde]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[90 (Avantgarde)]]></genre>
+					</test>
+		
+		
+				<test id="106">
+			<id>106</id>
+			<title><![CDATA[Test case 106]]></title>
+			<file><![CDATA[id3v1_106_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Gothic Rock. Only the first 80 genres are
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Gothic Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[91 (Gothic Rock)]]></genre>
+					</test>
+		
+		
+				<test id="107">
+			<id>107</id>
+			<title><![CDATA[Test case 107]]></title>
+			<file><![CDATA[id3v1_107_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Progressive Rock. Only the first 80      
+genres are defined in the original ID3.                               
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Progressive Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[92 (Progressive Rock)]]></genre>
+					</test>
+		
+		
+				<test id="108">
+			<id>108</id>
+			<title><![CDATA[Test case 108]]></title>
+			<file><![CDATA[id3v1_108_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Psychedelic Rock. Only the first 80      
+genres are defined in the original ID3.                               
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Psychedelic Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[93 (Psychedelic Rock)]]></genre>
+					</test>
+		
+		
+				<test id="109">
+			<id>109</id>
+			<title><![CDATA[Test case 109]]></title>
+			<file><![CDATA[id3v1_109_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Symphonic Rock. Only the first 80 genres 
+are defined in the original ID3.                                      
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Symphonic Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[94 (Symphonic Rock)]]></genre>
+					</test>
+		
+		
+				<test id="110">
+			<id>110</id>
+			<title><![CDATA[Test case 110]]></title>
+			<file><![CDATA[id3v1_110_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Slow Rock. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Slow Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[95 (Slow Rock)]]></genre>
+					</test>
+		
+		
+				<test id="111">
+			<id>111</id>
+			<title><![CDATA[Test case 111]]></title>
+			<file><![CDATA[id3v1_111_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Big Band. Only the first 80 genres are   
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Big Band]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[96 (Big Band)]]></genre>
+					</test>
+		
+		
+				<test id="112">
+			<id>112</id>
+			<title><![CDATA[Test case 112]]></title>
+			<file><![CDATA[id3v1_112_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Chorus. Only the first 80 genres are     
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Chorus]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[97 (Chorus)]]></genre>
+					</test>
+		
+		
+				<test id="113">
+			<id>113</id>
+			<title><![CDATA[Test case 113]]></title>
+			<file><![CDATA[id3v1_113_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Easy Listening. Only the first 80 genres 
+are defined in the original ID3.                                      
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Easy Listening]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[98 (Easy Listening)]]></genre>
+					</test>
+		
+		
+				<test id="114">
+			<id>114</id>
+			<title><![CDATA[Test case 114]]></title>
+			<file><![CDATA[id3v1_114_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Acoustic. Only the first 80 genres are   
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Acoustic]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[99 (Acoustic)]]></genre>
+					</test>
+		
+		
+				<test id="115">
+			<id>115</id>
+			<title><![CDATA[Test case 115]]></title>
+			<file><![CDATA[id3v1_115_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Humour. Only the first 80 genres are     
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Humour]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[100 (Humour)]]></genre>
+					</test>
+		
+		
+				<test id="116">
+			<id>116</id>
+			<title><![CDATA[Test case 116]]></title>
+			<file><![CDATA[id3v1_116_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Speech. Only the first 80 genres are     
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Speech]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[101 (Speech)]]></genre>
+					</test>
+		
+		
+				<test id="117">
+			<id>117</id>
+			<title><![CDATA[Test case 117]]></title>
+			<file><![CDATA[id3v1_117_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Chanson. Only the first 80 genres are    
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Chanson]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[102 (Chanson)]]></genre>
+					</test>
+		
+		
+				<test id="118">
+			<id>118</id>
+			<title><![CDATA[Test case 118]]></title>
+			<file><![CDATA[id3v1_118_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Opera. Only the first 80 genres are      
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Opera]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[103 (Opera)]]></genre>
+					</test>
+		
+		
+				<test id="119">
+			<id>119</id>
+			<title><![CDATA[Test case 119]]></title>
+			<file><![CDATA[id3v1_119_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Chamber Music. Only the first 80 genres  
+are defined in the original ID3.                                      
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Chamber Music]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[104 (Chamber Music)]]></genre>
+					</test>
+		
+		
+				<test id="120">
+			<id>120</id>
+			<title><![CDATA[Test case 120]]></title>
+			<file><![CDATA[id3v1_120_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Sonata. Only the first 80 genres are     
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Sonata]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[105 (Sonata)]]></genre>
+					</test>
+		
+		
+				<test id="121">
+			<id>121</id>
+			<title><![CDATA[Test case 121]]></title>
+			<file><![CDATA[id3v1_121_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Symphony. Only the first 80 genres are   
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Symphony]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[106 (Symphony)]]></genre>
+					</test>
+		
+		
+				<test id="122">
+			<id>122</id>
+			<title><![CDATA[Test case 122]]></title>
+			<file><![CDATA[id3v1_122_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Booty Bass. Only the first 80 genres are 
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Booty Bass]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[107 (Booty Bass)]]></genre>
+					</test>
+		
+		
+				<test id="123">
+			<id>123</id>
+			<title><![CDATA[Test case 123]]></title>
+			<file><![CDATA[id3v1_123_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Primus. Only the first 80 genres are     
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Primus]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[108 (Primus)]]></genre>
+					</test>
+		
+		
+				<test id="124">
+			<id>124</id>
+			<title><![CDATA[Test case 124]]></title>
+			<file><![CDATA[id3v1_124_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Porn Groove. Only the first 80 genres are
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Porn Groove]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[109 (Porn Groove)]]></genre>
+					</test>
+		
+		
+				<test id="125">
+			<id>125</id>
+			<title><![CDATA[Test case 125]]></title>
+			<file><![CDATA[id3v1_125_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Satire. Only the first 80 genres are     
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Satire]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[110 (Satire)]]></genre>
+					</test>
+		
+		
+				<test id="126">
+			<id>126</id>
+			<title><![CDATA[Test case 126]]></title>
+			<file><![CDATA[id3v1_126_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Slow Jam. Only the first 80 genres are   
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Slow Jam]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[111 (Slow Jam)]]></genre>
+					</test>
+		
+		
+				<test id="127">
+			<id>127</id>
+			<title><![CDATA[Test case 127]]></title>
+			<file><![CDATA[id3v1_127_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Club. Only the first 80 genres are       
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Club]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[112 (Club)]]></genre>
+					</test>
+		
+		
+				<test id="128">
+			<id>128</id>
+			<title><![CDATA[Test case 128]]></title>
+			<file><![CDATA[id3v1_128_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Tango. Only the first 80 genres are      
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Tango]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[113 (Tango)]]></genre>
+					</test>
+		
+		
+				<test id="129">
+			<id>129</id>
+			<title><![CDATA[Test case 129]]></title>
+			<file><![CDATA[id3v1_129_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Samba. Only the first 80 genres are      
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Samba]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[114 (Samba)]]></genre>
+					</test>
+		
+		
+				<test id="130">
+			<id>130</id>
+			<title><![CDATA[Test case 130]]></title>
+			<file><![CDATA[id3v1_130_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Folklore. Only the first 80 genres are   
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Folklore]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[115 (Folklore)]]></genre>
+					</test>
+		
+		
+				<test id="131">
+			<id>131</id>
+			<title><![CDATA[Test case 131]]></title>
+			<file><![CDATA[id3v1_131_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Ballad. Only the first 80 genres are     
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Ballad]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[116 (Ballad)]]></genre>
+					</test>
+		
+		
+				<test id="132">
+			<id>132</id>
+			<title><![CDATA[Test case 132]]></title>
+			<file><![CDATA[id3v1_132_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Power Ballad. Only the first 80 genres   
+are defined in the original ID3.                                      
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Power Ballad]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[117 (Power Ballad)]]></genre>
+					</test>
+		
+		
+				<test id="133">
+			<id>133</id>
+			<title><![CDATA[Test case 133]]></title>
+			<file><![CDATA[id3v1_133_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Rhythmic Soul. Only the first 80 genres  
+are defined in the original ID3.                                      
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Rhythmic Soul]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[118 (Rhythmic Soul)]]></genre>
+					</test>
+		
+		
+				<test id="134">
+			<id>134</id>
+			<title><![CDATA[Test case 134]]></title>
+			<file><![CDATA[id3v1_134_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Freestyle. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Freestyle]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[119 (Freestyle)]]></genre>
+					</test>
+		
+		
+				<test id="135">
+			<id>135</id>
+			<title><![CDATA[Test case 135]]></title>
+			<file><![CDATA[id3v1_135_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Duet. Only the first 80 genres are       
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Duet]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[120 (Duet)]]></genre>
+					</test>
+		
+		
+				<test id="136">
+			<id>136</id>
+			<title><![CDATA[Test case 136]]></title>
+			<file><![CDATA[id3v1_136_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Punk Rock. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Punk Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[121 (Punk Rock)]]></genre>
+					</test>
+		
+		
+				<test id="137">
+			<id>137</id>
+			<title><![CDATA[Test case 137]]></title>
+			<file><![CDATA[id3v1_137_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Drum Solo. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Drum Solo]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[122 (Drum Solo)]]></genre>
+					</test>
+		
+		
+				<test id="138">
+			<id>138</id>
+			<title><![CDATA[Test case 138]]></title>
+			<file><![CDATA[id3v1_138_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to A capella. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[A capella]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[123 (A capella)]]></genre>
+					</test>
+		
+		
+				<test id="139">
+			<id>139</id>
+			<title><![CDATA[Test case 139]]></title>
+			<file><![CDATA[id3v1_139_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Euro-House. Only the first 80 genres are 
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Euro-House]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[124 (Euro-House)]]></genre>
+					</test>
+		
+		
+				<test id="140">
+			<id>140</id>
+			<title><![CDATA[Test case 140]]></title>
+			<file><![CDATA[id3v1_140_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Dance Hall. Only the first 80 genres are 
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Dance Hall]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[125 (Dance Hall)]]></genre>
+					</test>
+		
+		
+				<test id="141">
+			<id>141</id>
+			<title><![CDATA[Test case 141]]></title>
+			<file><![CDATA[id3v1_141_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Goa. Only the first 80 genres are defined
+in the original ID3.                                                  
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Goa]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[126 (Goa)]]></genre>
+					</test>
+		
+		
+				<test id="142">
+			<id>142</id>
+			<title><![CDATA[Test case 142]]></title>
+			<file><![CDATA[id3v1_142_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Drum & Bass. Only the first 80 genres are
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Drum & Bass]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[127 (Drum & Bass)]]></genre>
+					</test>
+		
+		
+				<test id="143">
+			<id>143</id>
+			<title><![CDATA[Test case 143]]></title>
+			<file><![CDATA[id3v1_143_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Club-House. Only the first 80 genres are 
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Club-House]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[128 (Club-House)]]></genre>
+					</test>
+		
+		
+				<test id="144">
+			<id>144</id>
+			<title><![CDATA[Test case 144]]></title>
+			<file><![CDATA[id3v1_144_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Hardcore. Only the first 80 genres are   
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Hardcore]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[129 (Hardcore)]]></genre>
+					</test>
+		
+		
+				<test id="145">
+			<id>145</id>
+			<title><![CDATA[Test case 145]]></title>
+			<file><![CDATA[id3v1_145_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Terror. Only the first 80 genres are     
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Terror]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[130 (Terror)]]></genre>
+					</test>
+		
+		
+				<test id="146">
+			<id>146</id>
+			<title><![CDATA[Test case 146]]></title>
+			<file><![CDATA[id3v1_146_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Indie. Only the first 80 genres are      
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Indie]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[131 (Indie)]]></genre>
+					</test>
+		
+		
+				<test id="147">
+			<id>147</id>
+			<title><![CDATA[Test case 147]]></title>
+			<file><![CDATA[id3v1_147_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to BritPop. Only the first 80 genres are    
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[BritPop]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[132 (BritPop)]]></genre>
+					</test>
+		
+		
+				<test id="148">
+			<id>148</id>
+			<title><![CDATA[Test case 148]]></title>
+			<file><![CDATA[id3v1_148_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Negerpunk. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Negerpunk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[133 (Negerpunk)]]></genre>
+					</test>
+		
+		
+				<test id="149">
+			<id>149</id>
+			<title><![CDATA[Test case 149]]></title>
+			<file><![CDATA[id3v1_149_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Polsk Punk. Only the first 80 genres are 
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Polsk Punk]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[134 (Polsk Punk)]]></genre>
+					</test>
+		
+		
+				<test id="150">
+			<id>150</id>
+			<title><![CDATA[Test case 150]]></title>
+			<file><![CDATA[id3v1_150_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Beat. Only the first 80 genres are       
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Beat]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[135 (Beat)]]></genre>
+					</test>
+		
+		
+				<test id="151">
+			<id>151</id>
+			<title><![CDATA[Test case 151]]></title>
+			<file><![CDATA[id3v1_151_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Christian. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Christian]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[136 (Christian)]]></genre>
+					</test>
+		
+		
+				<test id="152">
+			<id>152</id>
+			<title><![CDATA[Test case 152]]></title>
+			<file><![CDATA[id3v1_152_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Heavy Metal. Only the first 80 genres are
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Heavy Metal]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[137 (Heavy Metal)]]></genre>
+					</test>
+		
+		
+				<test id="153">
+			<id>153</id>
+			<title><![CDATA[Test case 153]]></title>
+			<file><![CDATA[id3v1_153_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Black Metal. Only the first 80 genres are
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Black Metal]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[138 (Black Metal)]]></genre>
+					</test>
+		
+		
+				<test id="154">
+			<id>154</id>
+			<title><![CDATA[Test case 154]]></title>
+			<file><![CDATA[id3v1_154_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Crossover. Only the first 80 genres are  
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Crossover]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[139 (Crossover)]]></genre>
+					</test>
+		
+		
+				<test id="155">
+			<id>155</id>
+			<title><![CDATA[Test case 155]]></title>
+			<file><![CDATA[id3v1_155_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Contemporary. Only the first 80 genres   
+are defined in the original ID3.                                      
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Contemporary]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[140 (Contemporary)]]></genre>
+					</test>
+		
+		
+				<test id="156">
+			<id>156</id>
+			<title><![CDATA[Test case 156]]></title>
+			<file><![CDATA[id3v1_156_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Christian Rock. Only the first 80 genres 
+are defined in the original ID3.                                      
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Christian Rock]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[141 (Christian Rock)]]></genre>
+					</test>
+		
+		
+				<test id="157">
+			<id>157</id>
+			<title><![CDATA[Test case 157]]></title>
+			<file><![CDATA[id3v1_157_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Merengue. Only the first 80 genres are   
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Merengue]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[142 (Merengue)]]></genre>
+					</test>
+		
+		
+				<test id="158">
+			<id>158</id>
+			<title><![CDATA[Test case 158]]></title>
+			<file><![CDATA[id3v1_158_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Salsa. Only the first 80 genres are      
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Salsa]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[143 (Salsa)]]></genre>
+					</test>
+		
+		
+				<test id="159">
+			<id>159</id>
+			<title><![CDATA[Test case 159]]></title>
+			<file><![CDATA[id3v1_159_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Thrash Metal. Only the first 80 genres   
+are defined in the original ID3.                                      
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Thrash Metal]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[144 (Thrash Metal)]]></genre>
+					</test>
+		
+		
+				<test id="160">
+			<id>160</id>
+			<title><![CDATA[Test case 160]]></title>
+			<file><![CDATA[id3v1_160_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Anime. Only the first 80 genres are      
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Anime]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[145 (Anime)]]></genre>
+					</test>
+		
+		
+				<test id="161">
+			<id>161</id>
+			<title><![CDATA[Test case 161]]></title>
+			<file><![CDATA[id3v1_161_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to JPop. Only the first 80 genres are       
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[JPop]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[146 (JPop)]]></genre>
+					</test>
+		
+		
+				<test id="162">
+			<id>162</id>
+			<title><![CDATA[Test case 162]]></title>
+			<file><![CDATA[id3v1_162_genre_W.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to Synthpop. Only the first 80 genres are   
+defined in the original ID3.                                          
+Test case might generate a decoding warning.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Synthpop]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[147 (Synthpop)]]></genre>
+					</test>
+		
+		
+				<test id="163">
+			<id>163</id>
+			<title><![CDATA[Test case 163]]></title>
+			<file><![CDATA[id3v1_163_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 148.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/148]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[148 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="164">
+			<id>164</id>
+			<title><![CDATA[Test case 164]]></title>
+			<file><![CDATA[id3v1_164_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 149.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/149]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[149 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="165">
+			<id>165</id>
+			<title><![CDATA[Test case 165]]></title>
+			<file><![CDATA[id3v1_165_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 150.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/150]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[150 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="166">
+			<id>166</id>
+			<title><![CDATA[Test case 166]]></title>
+			<file><![CDATA[id3v1_166_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 151.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/151]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[151 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="167">
+			<id>167</id>
+			<title><![CDATA[Test case 167]]></title>
+			<file><![CDATA[id3v1_167_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 152.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/152]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[152 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="168">
+			<id>168</id>
+			<title><![CDATA[Test case 168]]></title>
+			<file><![CDATA[id3v1_168_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 153.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/153]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[153 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="169">
+			<id>169</id>
+			<title><![CDATA[Test case 169]]></title>
+			<file><![CDATA[id3v1_169_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 154.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/154]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[154 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="170">
+			<id>170</id>
+			<title><![CDATA[Test case 170]]></title>
+			<file><![CDATA[id3v1_170_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 155.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/155]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[155 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="171">
+			<id>171</id>
+			<title><![CDATA[Test case 171]]></title>
+			<file><![CDATA[id3v1_171_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 156.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/156]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[156 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="172">
+			<id>172</id>
+			<title><![CDATA[Test case 172]]></title>
+			<file><![CDATA[id3v1_172_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 157.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/157]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[157 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="173">
+			<id>173</id>
+			<title><![CDATA[Test case 173]]></title>
+			<file><![CDATA[id3v1_173_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 158.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/158]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[158 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="174">
+			<id>174</id>
+			<title><![CDATA[Test case 174]]></title>
+			<file><![CDATA[id3v1_174_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 159.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/159]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[159 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="175">
+			<id>175</id>
+			<title><![CDATA[Test case 175]]></title>
+			<file><![CDATA[id3v1_175_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 160.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/160]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[160 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="176">
+			<id>176</id>
+			<title><![CDATA[Test case 176]]></title>
+			<file><![CDATA[id3v1_176_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 161.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/161]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[161 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="177">
+			<id>177</id>
+			<title><![CDATA[Test case 177]]></title>
+			<file><![CDATA[id3v1_177_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 162.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/162]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[162 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="178">
+			<id>178</id>
+			<title><![CDATA[Test case 178]]></title>
+			<file><![CDATA[id3v1_178_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 163.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/163]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[163 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="179">
+			<id>179</id>
+			<title><![CDATA[Test case 179]]></title>
+			<file><![CDATA[id3v1_179_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 164.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/164]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[164 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="180">
+			<id>180</id>
+			<title><![CDATA[Test case 180]]></title>
+			<file><![CDATA[id3v1_180_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 165.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/165]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[165 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="181">
+			<id>181</id>
+			<title><![CDATA[Test case 181]]></title>
+			<file><![CDATA[id3v1_181_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 166.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/166]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[166 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="182">
+			<id>182</id>
+			<title><![CDATA[Test case 182]]></title>
+			<file><![CDATA[id3v1_182_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 167.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/167]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[167 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="183">
+			<id>183</id>
+			<title><![CDATA[Test case 183]]></title>
+			<file><![CDATA[id3v1_183_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 168.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/168]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[168 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="184">
+			<id>184</id>
+			<title><![CDATA[Test case 184]]></title>
+			<file><![CDATA[id3v1_184_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 169.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/169]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[169 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="185">
+			<id>185</id>
+			<title><![CDATA[Test case 185]]></title>
+			<file><![CDATA[id3v1_185_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 170.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/170]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[170 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="186">
+			<id>186</id>
+			<title><![CDATA[Test case 186]]></title>
+			<file><![CDATA[id3v1_186_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 171.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/171]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[171 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="187">
+			<id>187</id>
+			<title><![CDATA[Test case 187]]></title>
+			<file><![CDATA[id3v1_187_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 172.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/172]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[172 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="188">
+			<id>188</id>
+			<title><![CDATA[Test case 188]]></title>
+			<file><![CDATA[id3v1_188_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 173.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/173]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[173 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="189">
+			<id>189</id>
+			<title><![CDATA[Test case 189]]></title>
+			<file><![CDATA[id3v1_189_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 174.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/174]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[174 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="190">
+			<id>190</id>
+			<title><![CDATA[Test case 190]]></title>
+			<file><![CDATA[id3v1_190_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 175.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/175]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[175 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="191">
+			<id>191</id>
+			<title><![CDATA[Test case 191]]></title>
+			<file><![CDATA[id3v1_191_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 176.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/176]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[176 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="192">
+			<id>192</id>
+			<title><![CDATA[Test case 192]]></title>
+			<file><![CDATA[id3v1_192_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 177.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/177]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[177 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="193">
+			<id>193</id>
+			<title><![CDATA[Test case 193]]></title>
+			<file><![CDATA[id3v1_193_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 178.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/178]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[178 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="194">
+			<id>194</id>
+			<title><![CDATA[Test case 194]]></title>
+			<file><![CDATA[id3v1_194_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 179.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/179]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[179 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="195">
+			<id>195</id>
+			<title><![CDATA[Test case 195]]></title>
+			<file><![CDATA[id3v1_195_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 180.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/180]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[180 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="196">
+			<id>196</id>
+			<title><![CDATA[Test case 196]]></title>
+			<file><![CDATA[id3v1_196_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 181.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/181]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[181 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="197">
+			<id>197</id>
+			<title><![CDATA[Test case 197]]></title>
+			<file><![CDATA[id3v1_197_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 182.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/182]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[182 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="198">
+			<id>198</id>
+			<title><![CDATA[Test case 198]]></title>
+			<file><![CDATA[id3v1_198_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 183.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/183]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[183 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="199">
+			<id>199</id>
+			<title><![CDATA[Test case 199]]></title>
+			<file><![CDATA[id3v1_199_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 184.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/184]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[184 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="200">
+			<id>200</id>
+			<title><![CDATA[Test case 200]]></title>
+			<file><![CDATA[id3v1_200_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 185.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/185]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[185 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="201">
+			<id>201</id>
+			<title><![CDATA[Test case 201]]></title>
+			<file><![CDATA[id3v1_201_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 186.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/186]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[186 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="202">
+			<id>202</id>
+			<title><![CDATA[Test case 202]]></title>
+			<file><![CDATA[id3v1_202_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 187.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/187]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[187 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="203">
+			<id>203</id>
+			<title><![CDATA[Test case 203]]></title>
+			<file><![CDATA[id3v1_203_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 188.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/188]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[188 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="204">
+			<id>204</id>
+			<title><![CDATA[Test case 204]]></title>
+			<file><![CDATA[id3v1_204_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 189.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/189]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[189 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="205">
+			<id>205</id>
+			<title><![CDATA[Test case 205]]></title>
+			<file><![CDATA[id3v1_205_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 190.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/190]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[190 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="206">
+			<id>206</id>
+			<title><![CDATA[Test case 206]]></title>
+			<file><![CDATA[id3v1_206_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 191.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/191]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[191 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="207">
+			<id>207</id>
+			<title><![CDATA[Test case 207]]></title>
+			<file><![CDATA[id3v1_207_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 192.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/192]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[192 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="208">
+			<id>208</id>
+			<title><![CDATA[Test case 208]]></title>
+			<file><![CDATA[id3v1_208_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 193.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/193]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[193 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="209">
+			<id>209</id>
+			<title><![CDATA[Test case 209]]></title>
+			<file><![CDATA[id3v1_209_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 194.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/194]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[194 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="210">
+			<id>210</id>
+			<title><![CDATA[Test case 210]]></title>
+			<file><![CDATA[id3v1_210_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 195.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/195]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[195 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="211">
+			<id>211</id>
+			<title><![CDATA[Test case 211]]></title>
+			<file><![CDATA[id3v1_211_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 196.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/196]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[196 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="212">
+			<id>212</id>
+			<title><![CDATA[Test case 212]]></title>
+			<file><![CDATA[id3v1_212_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 197.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/197]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[197 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="213">
+			<id>213</id>
+			<title><![CDATA[Test case 213]]></title>
+			<file><![CDATA[id3v1_213_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 198.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/198]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[198 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="214">
+			<id>214</id>
+			<title><![CDATA[Test case 214]]></title>
+			<file><![CDATA[id3v1_214_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 199.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/199]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[199 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="215">
+			<id>215</id>
+			<title><![CDATA[Test case 215]]></title>
+			<file><![CDATA[id3v1_215_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 200.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/200]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[200 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="216">
+			<id>216</id>
+			<title><![CDATA[Test case 216]]></title>
+			<file><![CDATA[id3v1_216_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 201.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/201]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[201 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="217">
+			<id>217</id>
+			<title><![CDATA[Test case 217]]></title>
+			<file><![CDATA[id3v1_217_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 202.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/202]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[202 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="218">
+			<id>218</id>
+			<title><![CDATA[Test case 218]]></title>
+			<file><![CDATA[id3v1_218_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 203.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/203]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[203 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="219">
+			<id>219</id>
+			<title><![CDATA[Test case 219]]></title>
+			<file><![CDATA[id3v1_219_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 204.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/204]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[204 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="220">
+			<id>220</id>
+			<title><![CDATA[Test case 220]]></title>
+			<file><![CDATA[id3v1_220_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 205.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/205]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[205 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="221">
+			<id>221</id>
+			<title><![CDATA[Test case 221]]></title>
+			<file><![CDATA[id3v1_221_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 206.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/206]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[206 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="222">
+			<id>222</id>
+			<title><![CDATA[Test case 222]]></title>
+			<file><![CDATA[id3v1_222_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 207.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/207]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[207 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="223">
+			<id>223</id>
+			<title><![CDATA[Test case 223]]></title>
+			<file><![CDATA[id3v1_223_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 208.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/208]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[208 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="224">
+			<id>224</id>
+			<title><![CDATA[Test case 224]]></title>
+			<file><![CDATA[id3v1_224_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 209.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/209]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[209 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="225">
+			<id>225</id>
+			<title><![CDATA[Test case 225]]></title>
+			<file><![CDATA[id3v1_225_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 210.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/210]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[210 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="226">
+			<id>226</id>
+			<title><![CDATA[Test case 226]]></title>
+			<file><![CDATA[id3v1_226_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 211.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/211]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[211 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="227">
+			<id>227</id>
+			<title><![CDATA[Test case 227]]></title>
+			<file><![CDATA[id3v1_227_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 212.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/212]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[212 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="228">
+			<id>228</id>
+			<title><![CDATA[Test case 228]]></title>
+			<file><![CDATA[id3v1_228_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 213.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/213]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[213 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="229">
+			<id>229</id>
+			<title><![CDATA[Test case 229]]></title>
+			<file><![CDATA[id3v1_229_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 214.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/214]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[214 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="230">
+			<id>230</id>
+			<title><![CDATA[Test case 230]]></title>
+			<file><![CDATA[id3v1_230_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 215.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/215]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[215 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="231">
+			<id>231</id>
+			<title><![CDATA[Test case 231]]></title>
+			<file><![CDATA[id3v1_231_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 216.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/216]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[216 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="232">
+			<id>232</id>
+			<title><![CDATA[Test case 232]]></title>
+			<file><![CDATA[id3v1_232_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 217.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/217]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[217 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="233">
+			<id>233</id>
+			<title><![CDATA[Test case 233]]></title>
+			<file><![CDATA[id3v1_233_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 218.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/218]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[218 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="234">
+			<id>234</id>
+			<title><![CDATA[Test case 234]]></title>
+			<file><![CDATA[id3v1_234_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 219.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/219]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[219 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="235">
+			<id>235</id>
+			<title><![CDATA[Test case 235]]></title>
+			<file><![CDATA[id3v1_235_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 220.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/220]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[220 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="236">
+			<id>236</id>
+			<title><![CDATA[Test case 236]]></title>
+			<file><![CDATA[id3v1_236_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 221.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/221]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[221 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="237">
+			<id>237</id>
+			<title><![CDATA[Test case 237]]></title>
+			<file><![CDATA[id3v1_237_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 222.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/222]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[222 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="238">
+			<id>238</id>
+			<title><![CDATA[Test case 238]]></title>
+			<file><![CDATA[id3v1_238_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 223.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/223]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[223 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="239">
+			<id>239</id>
+			<title><![CDATA[Test case 239]]></title>
+			<file><![CDATA[id3v1_239_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 224.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/224]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[224 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="240">
+			<id>240</id>
+			<title><![CDATA[Test case 240]]></title>
+			<file><![CDATA[id3v1_240_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 225.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/225]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[225 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="241">
+			<id>241</id>
+			<title><![CDATA[Test case 241]]></title>
+			<file><![CDATA[id3v1_241_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 226.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/226]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[226 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="242">
+			<id>242</id>
+			<title><![CDATA[Test case 242]]></title>
+			<file><![CDATA[id3v1_242_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 227.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/227]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[227 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="243">
+			<id>243</id>
+			<title><![CDATA[Test case 243]]></title>
+			<file><![CDATA[id3v1_243_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 228.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/228]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[228 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="244">
+			<id>244</id>
+			<title><![CDATA[Test case 244]]></title>
+			<file><![CDATA[id3v1_244_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 229.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/229]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[229 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="245">
+			<id>245</id>
+			<title><![CDATA[Test case 245]]></title>
+			<file><![CDATA[id3v1_245_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 230.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/230]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[230 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="246">
+			<id>246</id>
+			<title><![CDATA[Test case 246]]></title>
+			<file><![CDATA[id3v1_246_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 231.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/231]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[231 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="247">
+			<id>247</id>
+			<title><![CDATA[Test case 247]]></title>
+			<file><![CDATA[id3v1_247_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 232.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/232]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[232 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="248">
+			<id>248</id>
+			<title><![CDATA[Test case 248]]></title>
+			<file><![CDATA[id3v1_248_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 233.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/233]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[233 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="249">
+			<id>249</id>
+			<title><![CDATA[Test case 249]]></title>
+			<file><![CDATA[id3v1_249_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 234.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/234]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[234 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="250">
+			<id>250</id>
+			<title><![CDATA[Test case 250]]></title>
+			<file><![CDATA[id3v1_250_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 235.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/235]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[235 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="251">
+			<id>251</id>
+			<title><![CDATA[Test case 251]]></title>
+			<file><![CDATA[id3v1_251_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 236.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/236]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[236 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="252">
+			<id>252</id>
+			<title><![CDATA[Test case 252]]></title>
+			<file><![CDATA[id3v1_252_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 237.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/237]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[237 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="253">
+			<id>253</id>
+			<title><![CDATA[Test case 253]]></title>
+			<file><![CDATA[id3v1_253_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 238.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/238]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[238 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="254">
+			<id>254</id>
+			<title><![CDATA[Test case 254]]></title>
+			<file><![CDATA[id3v1_254_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 239.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/239]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[239 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="255">
+			<id>255</id>
+			<title><![CDATA[Test case 255]]></title>
+			<file><![CDATA[id3v1_255_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 240.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/240]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[240 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="256">
+			<id>256</id>
+			<title><![CDATA[Test case 256]]></title>
+			<file><![CDATA[id3v1_256_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 241.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/241]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[241 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="257">
+			<id>257</id>
+			<title><![CDATA[Test case 257]]></title>
+			<file><![CDATA[id3v1_257_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 242.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/242]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[242 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="258">
+			<id>258</id>
+			<title><![CDATA[Test case 258]]></title>
+			<file><![CDATA[id3v1_258_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 243.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/243]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[243 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="259">
+			<id>259</id>
+			<title><![CDATA[Test case 259]]></title>
+			<file><![CDATA[id3v1_259_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 244.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/244]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[244 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="260">
+			<id>260</id>
+			<title><![CDATA[Test case 260]]></title>
+			<file><![CDATA[id3v1_260_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 245.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/245]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[245 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="261">
+			<id>261</id>
+			<title><![CDATA[Test case 261]]></title>
+			<file><![CDATA[id3v1_261_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 246.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/246]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[246 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="262">
+			<id>262</id>
+			<title><![CDATA[Test case 262]]></title>
+			<file><![CDATA[id3v1_262_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 247.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/247]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[247 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="263">
+			<id>263</id>
+			<title><![CDATA[Test case 263]]></title>
+			<file><![CDATA[id3v1_263_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 248.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/248]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[248 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="264">
+			<id>264</id>
+			<title><![CDATA[Test case 264]]></title>
+			<file><![CDATA[id3v1_264_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 249.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/249]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[249 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="265">
+			<id>265</id>
+			<title><![CDATA[Test case 265]]></title>
+			<file><![CDATA[id3v1_265_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 250.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/250]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[250 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="266">
+			<id>266</id>
+			<title><![CDATA[Test case 266]]></title>
+			<file><![CDATA[id3v1_266_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 251.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/251]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[251 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="267">
+			<id>267</id>
+			<title><![CDATA[Test case 267]]></title>
+			<file><![CDATA[id3v1_267_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 252.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/252]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[252 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="268">
+			<id>268</id>
+			<title><![CDATA[Test case 268]]></title>
+			<file><![CDATA[id3v1_268_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 253.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/253]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[253 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="269">
+			<id>269</id>
+			<title><![CDATA[Test case 269]]></title>
+			<file><![CDATA[id3v1_269_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 254.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/254]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[254 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="270">
+			<id>270</id>
+			<title><![CDATA[Test case 270]]></title>
+			<file><![CDATA[id3v1_270_genre_F.mp3]]></file>
+			<desc><![CDATA[An ID3 tag with genre set to 255.                                     
+Test case should generate a decoding failure.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[Unknown/255]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[]]></comment>
+							<genre><![CDATA[255 (unknown)]]></genre>
+					</test>
+		
+		
+				<test id="271">
+			<id>271</id>
+			<title><![CDATA[Test case 271]]></title>
+			<file><![CDATA[id3v1_271_extra.mp3]]></file>
+			<desc><![CDATA[Title with 8-bit iso-8859-1 characters (would be written as           
+r&auml;ksm&ouml;rg&aring;s in HTML).]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[r�ksm�rg�s]]></title>
+							<artist><![CDATA[r�ksm�rg�s]]></artist>
+							<album><![CDATA[r�ksm�rg�s]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[r�ksm�rg�s]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="272">
+			<id>272</id>
+			<title><![CDATA[Test case 272]]></title>
+			<file><![CDATA[id3v1_272_extra.mp3]]></file>
+			<desc><![CDATA[Title with utf-8-encoded 8-bit string (would be written as            
+r&auml;ksm&ouml;rg&aring;s in HTML).]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[räksmörgås]]></title>
+							<artist><![CDATA[räksmörgås]]></artist>
+							<album><![CDATA[räksmörgås]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[räksmörgås]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="273">
+			<id>273</id>
+			<title><![CDATA[Test case 273]]></title>
+			<file><![CDATA[id3v1_273_extra.mp3]]></file>
+			<desc><![CDATA[Comment field with http://-style URL.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[http://www.id3.org/]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+		
+		
+				<test id="274">
+			<id>274</id>
+			<title><![CDATA[Test case 274]]></title>
+			<file><![CDATA[id3v1_274_extra.mp3]]></file>
+			<desc><![CDATA[Comment field with unprefixed URL.]]></desc>
+							<version><![CDATA[1.0]]></version>
+							<head><![CDATA[TAG]]></head>
+							<title><![CDATA[]]></title>
+							<artist><![CDATA[]]></artist>
+							<album><![CDATA[]]></album>
+							<year><![CDATA[2003]]></year>
+							<comment><![CDATA[www.id3.org/]]></comment>
+							<genre><![CDATA[0 (Blues)]]></genre>
+					</test>
+			</testcases>

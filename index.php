@@ -13,7 +13,7 @@ ini_set('display_errors', 'On');
 
 require 'ID3/ID3.php';
 
-$file = new ID3('c.mp3');
+$file = new ID3('party.mp3');
 //$file->Title = 'Custom title';
 //$file->Genre = 5;
 //$file->Album = "Johnny and Paul rock.";
